@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/bundle.js"></script>
+  <title>Starter</title>
+</head>
+<body>
+  <div id="app" >
+     <div id="enter-amount">
+      <label for="enter_amount">Enter an Amount</label>
+       <input type="number" min= 0 v-model="inputCurrency">
+     </div>
+
+    <label for="currency_select">Select a Currency:</label>
+      <select id="currency_select" v-model="selectedCurrency" >
+      <option disabled value="">Select a Currency</option>
+      <option v-for="(currency, rate) in currencies" :value="currency">{{rate}}
+      </option>
+    </select>
+
+    <div id="converted-currency"></div>
+    <h5>Converted Currency from Euros: {{convertedCurrency}}</h5>
+    <h5>Convert to Euros: {{convertedCurrency2}}</h5>
+
+
+
+
+</body>
+</html>
